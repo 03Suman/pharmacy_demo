@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCare+ | Pharmacy Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="topbar">Free delivery on orders above ₹499 <span>•</span> 100% genuine medicines</div>
+  <header class="header">
+    <a class="brand" href="#"><span class="brand-mark">+</span><span>MediCare<span class="brand-plus">+</span></span></a>
+    <nav>
+      <a class="active" href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#prescription">Prescription</a>
+      <a href="#track">Track Order</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="cart-btn" id="cartBtn">Cart <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>●</span> Your trusted online pharmacy</div>
+        <h1>Healthcare delivered<br><em>to your doorstep.</em></h1>
+        <p>Order medicines, wellness essentials and everyday healthcare products with a smooth, secure checkout experience.</p>
+        <div class="hero-cta">
+          <a class="primary-btn" href="#products">Shop medicines <span>→</span></a>
+          <a class="text-btn" href="#prescription">Upload prescription <span>↗</span></a>
+        </div>
+        <div class="trust-row">
+          <div><strong>10k+</strong><small>Products</small></div>
+          <div><strong>24/7</strong><small>Support</small></div>
+          <div><strong>100%</strong><small>Genuine</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="medicine-card">
+          <div class="med-top"><span class="pill-icon">✚</span><span>Healthcare essentials</span></div>
+          <div class="bottle">
+            <div class="bottle-cap"></div><div class="bottle-body"><span>MediCare</span><b>VITAMIN<br>DAILY</b></div>
+          </div>
+          <div class="floating-card fc-1">✓ <span>Genuine<br><b>Products</b></span></div>
+          <div class="floating-card fc-2">⚡ <span>Fast<br><b>Delivery</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-strip">
+      <div><span>🚚</span><b>Fast Delivery</b><small>Across your city</small></div>
+      <div><span>🛡</span><b>Verified Products</b><small>Quality assured</small></div>
+      <div><span>💳</span><b>Secure Payments</b><small>100% protected</small></div>
+      <div><span>☎</span><b>Pharmacist Support</b><small>We're here to help</small></div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="section-head">
+        <div><div class="eyebrow">CURATED FOR YOU</div><h2>Popular products</h2></div>
+        <button class="outline-btn" id="viewAll">View all products →</button>
+      </div>
+      <div class="category-row" id="categoryRow"></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="prescription" class="prescription-section">
+      <div class="rx-copy">
+        <div class="eyebrow light">PRESCRIPTION SERVICE</div>
+        <h2>Have a prescription?<br><span>We’ll handle the rest.</span></h2>
+        <p>Upload your doctor's prescription and our pharmacist will check it. We'll show you the available products so you can add them to your cart and place your order.</p>
+        <div class="rx-points"><span>✓</span> Pharmacist verified <span>✓</span> Easy reorder <span>✓</span> Secure upload</div>
+      </div>
+      <div class="upload-box">
+        <div class="upload-icon">↑</div>
+        <h3>Upload prescription</h3>
+        <p>JPG, PNG or PDF • Max 5 MB</p>
+        <input type="file" id="rxFile" accept=".jpg,.jpeg,.png,.pdf">
+        <label for="rxFile" class="primary-btn upload-label">Choose file</label>
+        <div id="rxName" class="file-name">No file selected</div>
+      </div>
+    </section>
+
+    <section id="rxResults" class="section hidden">
+      <div class="section-head">
+        <div><div class="eyebrow">PRESCRIPTION MATCH</div><h2>Available from your prescription</h2></div>
+        <span class="match-badge">4 products found</span>
+      </div>
+      <div class="product-grid" id="rxGrid"></div>
+    </section>
+
+    <section id="track" class="section tracking-section">
+      <div class="section-head"><div><div class="eyebrow">ORDER TRACKING</div><h2>Track your order</h2></div></div>
+      <div class="track-search">
+        <input id="orderInput" placeholder="Enter order ID, e.g. MC-10428">
+        <button class="primary-btn" id="trackBtn">Track order</button>
+      </div>
+      <div id="trackingCard" class="tracking-card hidden"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div><a class="brand footer-brand" href="#"><span class="brand-mark">+</span><span>MediCare<span class="brand-plus">+</span></span></a><p>Your trusted digital pharmacy demo.<br>Simple, safe and convenient healthcare.</p></div>
+      <div><h4>Shop</h4><a href="#products">Medicines</a><a href="#products">Wellness</a><a href="#products">Personal Care</a></div>
+      <div><h4>Help</h4><a href="#track">Track Order</a><a href="#prescription">Prescription</a><a href="#">Contact Support</a></div>
+      <div><h4>Contact</h4><p>support@medicare.demo</p><p>+91 98765 43210</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 MediCare+ Demo • Built for client presentation</div>
+  </footer>
+
+  <div class="drawer-overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR CART</span><h2>Shopping bag</h2></div><button class="close-btn" id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="subtotal"><span>Subtotal</span><b id="subtotal">₹0</b></div>
+      <div class="delivery-note">Free delivery on orders above ₹499</div>
+      <button class="primary-btn full" id="checkoutBtn">Proceed to checkout →</button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal">
+      <button class="close-btn modal-close" id="closeCheckout">×</button>
+      <div id="checkoutContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
